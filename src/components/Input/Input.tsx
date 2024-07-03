@@ -35,6 +35,13 @@ const Input = React.forwardRef<HTMLInputElement, Props>((
         togglePasswordMode,
         placeholder
     }, ref) => {
+
+    const togglePassword = (e: React.MouseEvent<HTMLDivElement>) => {
+        e.preventDefault();
+        e.stopPropagation();
+        togglePasswordMode?.();
+    }
+
     const classes = classNames({
         [cssModules.wrapper]: true,
         [cssModules.default]: state === InputState.Default,
@@ -51,7 +58,7 @@ const Input = React.forwardRef<HTMLInputElement, Props>((
             type={type === 'password' && !passwordHidden ? 'text' : type}
             placeholder={placeholder}
         />
-        {type === 'password' && <div className={cssModules.icon} onClick={togglePasswordMode}>
+        {type === 'password' && <div className={cssModules.icon} onClick={togglePassword}>
             {passwordHidden ? <EyeShown /> : <EyeHidden/>}
         </div>}
         {helper && <div className={cssModules.helper}>

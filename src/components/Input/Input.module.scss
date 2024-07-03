@@ -25,11 +25,15 @@
   border-radius: 10px;
   transition: all .25s;
   &::placeholder {
-    color: $primary-text-color;
+    color: $placeholder-color;
     font-size: 16px;
   }
   &:focus {
-    border-color: $icons-color
+    border-color: $icons-color;
+    &::placeholder {
+      color: $primary-text-color;
+      font-size: 16px;
+    }
   }
 }
 
@@ -37,7 +41,7 @@
   position: absolute;
   right: 8px;
   cursor: pointer;
-  top: 20px;
+  top: 22px;
   fill: $icons-color;
 }
 
@@ -45,6 +49,7 @@
   padding: 10px;
   font-size: 13px;
   margin: 6px 0;
+  padding-left: 22px;
 }
 
 .default {}

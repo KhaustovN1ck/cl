@@ -122,10 +122,10 @@ export default function SignUpForm() {
                     render={({field}) => {
                         let state: InputState = InputState.Default;
                         const fieldState = getFieldState('password');
-                        if(fieldState.error) {
+                        if(fieldState.error || fieldState.invalid) {
                             state = InputState.Error;
-                        } else if(fieldState.isTouched && !fieldState.error) {
-                            state = InputState.Success
+                        } else if(!fieldState.invalid && fieldState.isTouched && passwordErrors.length === 0) {
+                            state = InputState.Success;
                         }
                         return <Input
                             ref={field.ref}
