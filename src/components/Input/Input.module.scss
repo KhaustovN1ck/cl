@@ -1,0 +1,68 @@
+@import "@/styles/variables";
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-direction: column;
+  padding: 12px 0;
+  position: relative;
+  &:last-child {
+    padding-top: 0;
+  }
+}
+
+.input {
+  background-color: white;
+  padding: 10px 10px 10px 20px;
+  width: 100%;
+  border-width: 1px;
+  font-size: 16px;
+  line-height: 1.5;
+  border-style: solid;
+  border-color: transparent;
+  outline: none;
+  border-radius: 10px;
+  transition: all .25s;
+  &::placeholder {
+    color: $primary-text-color;
+    font-size: 16px;
+  }
+  &:focus {
+    border-color: $icons-color
+  }
+}
+
+.icon {
+  position: absolute;
+  right: 8px;
+  cursor: pointer;
+  top: 20px;
+  fill: $icons-color;
+}
+
+.helper {
+  padding: 10px;
+  font-size: 13px;
+  margin: 6px 0;
+}
+
+.default {}
+.success {
+  .icon {
+    fill: $success-color;
+  }
+  .input {
+    border-color: $success-color !important;
+    color: $success-color;
+  }
+}
+.error {
+  .icon {
+    color: $error-color;
+  }
+  .input {
+    border-color: $error-color;
+    color: $error-color;
+  }
+}

@@ -1,0 +1,40 @@
+@import "./variables";
+
+@font-face {
+  font-family: 'Moderat';
+  src: url('/fonts/Moderat.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat-Regular.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat-SemiBold.ttf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat-SemiBold.ttf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Montserrat', 'Moderat', sans-serif;
+  background-image: linear-gradient(to bottom, #F4F9FF, #E0EDFB);
+  height: 100vh;
+  color: $primary-text-color;
+}
+
+* {
+  box-sizing: border-box;
+}
